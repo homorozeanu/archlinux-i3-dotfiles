@@ -6,7 +6,7 @@ import = [
 TERM = "xterm-256color"
 
 [font]
-size = 10.0
+size = 14.0
 
 [font.bold]
 family = "MesloLGS Nerd Font Mono"
@@ -23,3 +23,7 @@ style = "Italic"
 [font.normal]
 family = "MesloLGS Nerd Font Mono"
 style = "Regular"
+
+[shell]
+args = ["--login"]
+program = "/usr/bin/zsh"
