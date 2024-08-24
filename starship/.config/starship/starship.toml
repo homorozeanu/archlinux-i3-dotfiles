@@ -1,7 +1,6 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](surface0)\
 $os\
 $username\
 [](bg:peach fg:surface0)\
@@ -10,20 +9,16 @@ $directory\
 $git_branch\
 $git_status\
 [](fg:green bg:teal)\
-$c\
-$rust\
 $golang\
 $nodejs\
-$php\
 $java\
-$kotlin\
 $haskell\
-$python\
+$dotnet\
 [](fg:teal bg:blue)\
 $docker_context\
-[](fg:blue bg:purple)\
-$time\
-[ ](fg:purple)\
+[](fg:blue )\
+$fill\
+$cmd_duration\
 $line_break$character"""
 
 palette = 'catppuccin_mocha'
@@ -111,6 +106,7 @@ truncation_symbol = "…/"
 "Music" = "󰝚 "
 "Pictures" = " "
 "Developer" = "󰲋 "
+"Code" = "󰲋 "
 
 [git_branch]
 symbol = ""
@@ -171,14 +167,32 @@ symbol = ""
 style = "bg:mantle"
 format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
 
+[dotnet]
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+
 [time]
 disabled = false
 time_format = "%R"
 style = "bg:peach"
 format = '[[  $time ](fg:mantle bg:purple)]($style)'
 
+[jobs]
+symbol = ' '
+style = 'red'
+number_threshold = 1
+format = '[$symbol]($style)'
+
+[cmd_duration]
+min_time = 500
+style = 'fg:gray'
+format = '[$duration]($style)'
+
 [line_break]
 disabled = false
+
+[fill]
+symbol = ' '
 
 [character]
 disabled = false
